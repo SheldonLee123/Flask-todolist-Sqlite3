@@ -328,6 +328,18 @@ def delete_item(id):
 
 	return redirect(url_for('todolist'))
 
+# Done Item
+@app.route('/done_item/<string:id>', methods=['POST'])
+@is_logged_in
+def done_item(id):
+	todo = Todo.query.filter_by(id=id).first()
+	todo.complete = True
+	db.session.commit()
+
+	flash('Item Finished', 'success')
+
+	return redirect(url_for('incomplete'))
+
 if __name__ == '__main__':
 	app.secret_key = 'secret123'
 	app.run(debug=True)

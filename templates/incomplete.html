@@ -16,6 +16,7 @@
 			<th>Status</th>
 			<th></th>
 			<th></th>
+			<th></th>
 		</tr>
 		{% for item in items %}
 			<tr>
@@ -29,6 +30,12 @@
 				<td>Incomplete</td>
 				{% endif %}
 				<td><a class="btn btn-default pull-right" href="/edit_item/{{item.id}}">Edit</a></td>
+				<td>
+					<form class="" action="{{url_for('done_item', id=item.id)}}" method="post">
+						<input type="hidden" name="_method" value="Finished">
+						<input type="submit" value="Finished" class="btn btn-success">
+					</form>
+				</td>
 				<td>
 					<form class="" action="{{url_for('delete_item', id=item.id)}}" method="post">
 						<input type="hidden" name="_method" value="DELETE">
