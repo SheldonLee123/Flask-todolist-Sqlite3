@@ -24,9 +24,9 @@
 				<td>{{item.author}}</td>
 				<td>{{item.date}}</td>
 				{% if item.complete == True %}
-				<td>Complete</td>
+				<td class="text-success">Complete</td>
 				{% else %}
-				<td>Incomplete</td>
+				<td class="text-danger">Incomplete</td>
 				{% endif %}
 				<td><a class="btn btn-default pull-right" href="/edit_item/{{item.id}}">Edit</a></td>
 				<td>
