@@ -1,5 +1,4 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request
-from data import Articles
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators, DateField, BooleanField,SelectField
 from passlib.hash import sha256_crypt
